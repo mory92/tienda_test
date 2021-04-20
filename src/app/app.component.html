@@ -1,11 +1,13 @@
-<div class="contenedor-padre">
-  <mat-toolbar class="barra" color="warn">
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+  <mat-toolbar class="" color="warn">
     <mat-toolbar-row>
       <button (click)="cajon.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
       </button>
       <span>
-        Mi tienda&nbsp;|&nbsp;By parzibyte
+        Tienda
       </span>
       <span class="example-fill-remaining-space"></span>
       <button mat-raised-button [matMenuTriggerFor]="menu">
@@ -22,7 +24,7 @@
           Terminar compra</a>
       </mat-menu>
       <a style="margin-left: 10px" mat-raised-button color="primary"
-         href="https://parzibyte.me/blog/contrataciones-ayuda/" target="_blank">
+         href="" target="_blank">
         Ayuda y soporte
       </a>
     </mat-toolbar-row>
@@ -45,14 +47,12 @@
           <mat-icon color="primary">store</mat-icon>
           Ver tienda
         </a>
-        <mat-divider></mat-divider>
-        <a mat-list-item href="https://parzibyte.me/blog/" target="_blank">
-          Creado por Parzibyte
-        </a>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="padding-10">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
+</div>
+</div>
 </div>
