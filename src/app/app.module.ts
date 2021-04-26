@@ -1,20 +1,3 @@
-/*
-
-    Programado por Luis Cabrera Benito 
-  ____          _____               _ _           _       
- |  _ \        |  __ \             (_) |         | |      
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___ 
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |        
-        |___/                               |___/         
-    
-    
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-*/
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {MatSliderModule} from '@angular/material/slider';
@@ -50,6 +33,8 @@ import {MatMenuModule} from "@angular/material/menu";
 import { TerminarCompraComponent } from './terminar-compra/terminar-compra.component';
 import {MatStepperModule} from "@angular/material/stepper";
 import { DetalleDeVentaComponent } from './detalle-de-venta/detalle-de-venta.component';
+import { ProductosFilterPipe } from './productos/productos-filter.pipe';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -63,7 +48,8 @@ import { DetalleDeVentaComponent } from './detalle-de-venta/detalle-de-venta.com
     TarjetaProductoComponent,
     DetalleDeProductoComponent,
     TerminarCompraComponent,
-    DetalleDeVentaComponent
+    DetalleDeVentaComponent,
+    ProductosFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -89,6 +75,7 @@ import { DetalleDeVentaComponent } from './detalle-de-venta/detalle-de-venta.com
     MatBadgeModule,
     MatMenuModule,
     MatStepperModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

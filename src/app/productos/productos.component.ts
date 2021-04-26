@@ -1,20 +1,3 @@
-/*
-
-    Programado por Luis Cabrera Benito 
-  ____          _____               _ _           _       
- |  _ \        |  __ \             (_) |         | |      
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___ 
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |        
-        |___/                               |___/         
-    
-    
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-*/
 import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {ProductosService} from "../productos.service";
@@ -27,13 +10,13 @@ import {ProductosService} from "../productos.service";
 export class ProductosComponent implements OnInit {
 
   public productos = [];
-  public columnas = ['nombre', 'descripcion', 'precio', 'eliminar'];
+  public columnas = ['nombre', 'descripcion', 'categoria', 'precio', 'eliminar'];
 
   constructor(private router: Router, private productosService: ProductosService) {
   }
 
   async eliminar(producto) {
-    if (!confirm("¿Realmente lo quieres eliminar<?")) {
+    if (!confirm("¿Realmente lo quieres eliminar?")) {
       return;
     }
     await this.productosService.eliminarProducto(producto.id);

@@ -1,1 +1,4 @@
-<app-tarjeta-producto [producto]="producto" *ngFor="let producto of productos"></app-tarjeta-producto>
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Buscar por nombre" [(ngModel)]="searchTerm" style="width: 250px">
+</div>
+<app-tarjeta-producto [producto]="producto" *ngFor="let producto of productos | productosFilter:searchTerm"></app-tarjeta-producto>

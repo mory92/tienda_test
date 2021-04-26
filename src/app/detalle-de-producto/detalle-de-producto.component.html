@@ -16,6 +16,7 @@
     <mat-grid-tile class="detalles">
       <h1 class="mat-display-2">{{producto.nombre}}</h1>
       <p>{{producto.descripcion}}</p>
+      <p>{{producto.categoria}}</p>
       <strong>Precio</strong>
       <h1 class="mat-display-2">{{producto.precio | currency}}</h1>
       <mat-chip-list *ngIf="yaExiste">

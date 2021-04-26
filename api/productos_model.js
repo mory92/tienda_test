@@ -1,31 +1,14 @@
-/*
-
-    Programado por Luis Cabrera Benito 
-  ____          _____               _ _           _       
- |  _ \        |  __ \             (_) |         | |      
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___ 
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |        
-        |___/                               |___/         
-    
-    
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-*/
 const conexion = require("./conexion")
 const fs = require("fs");
 const path = require("path");
 module.exports = {
-  insertar(nombre, descripcion, precio) {
+  insertar(nombre, descripcion, categoria, precio) {
     return new Promise((resolve, reject) => {
       conexion.query(`insert into productos
-            (nombre, descripcion, precio)
+            (nombre, descripcion, categoria, precio)
             values
-            (?, ?, ?)`,
-        [nombre, descripcion, precio], (err, resultados) => {
+            (?, ?, ?, ?)`,
+        [nombre, descripcion, categoria, precio], (err, resultados) => {
           if (err) reject(err);
           else resolve(resultados.insertId);
         });
@@ -45,7 +28,7 @@ module.exports = {
   },
   obtener() {
     return new Promise((resolve, reject) => {
-      conexion.query(`select id, nombre, descripcion, precio from productos`,
+      conexion.query(`select id, nombre, descripcion, categoria, precio from productos`,
         (err, resultados) => {
           if (err) reject(err);
           else resolve(resultados);
@@ -58,9 +41,6 @@ module.exports = {
         async (err, resultados) => {
           if (err) reject(err);
           else {
-            /*
-              Si existe un dios, que me disculpe por este no-optimizado e ineficiente fragmento de código
-             */
             for (let x = 0; x < resultados.length; x++) {
               resultados[x].foto = await this.obtenerPrimeraFoto(resultados[x].id);
             }
@@ -91,7 +71,7 @@ module.exports = {
   },
   obtenerPorId(id) {
     return new Promise((resolve, reject) => {
-      conexion.query(`select id, nombre,descripcion, precio from productos where id = ?`,
+      conexion.query(`select id, nombre,descripcion, categoria, precio from productos where id = ?`,
         [id],
         (err, resultados) => {
           if (err) reject(err);

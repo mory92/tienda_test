@@ -1,24 +1,12 @@
-/*
-
-    Programado por Luis Cabrera Benito 
-  ____          _____               _ _           _       
- |  _ \        |  __ \             (_) |         | |      
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___ 
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |        
-        |___/                               |___/         
-    
-    
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-*/
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Producto} from "../producto";
 import {ProductosService} from "../productos.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+
+interface Categoria {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-agregar-producto',
@@ -26,7 +14,7 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   styleUrls: ['./agregar-producto.component.css']
 })
 export class AgregarProductoComponent implements OnInit {
-  productoModel = new Producto("", "",);
+  productoModel = new Producto("", "", "",);
   @ViewChild("foto", {
     read: ElementRef
   }) foto: ElementRef;
@@ -36,12 +24,21 @@ export class AgregarProductoComponent implements OnInit {
 
   public cargando = false;
 
+  categorias: Categoria[] = [
+    {value: 'comida-perro-0', viewValue: 'Comida Perro'},
+    {value: 'comida-gato-1', viewValue: 'Comida Gato'},
+    {value: 'varios-2', viewValue: 'Varios'}
+  ];
+
   async guardar() {
     if (!this.productoModel.nombre) {
       return alert("Escribe un nombre");
     }
     if (!this.productoModel.descripcion) {
       return alert("Escribe la descripción");
+    }
+    if (!this.productoModel.categoria) {
+      return alert("Escribe la categoría");
     }
     if (!this.productoModel.precio) {
       return alert("Escribe el precio");
@@ -67,7 +64,7 @@ export class AgregarProductoComponent implements OnInit {
     });
 
     this.cargando = false;
-    this.productoModel = new Producto("", "");
+    this.productoModel = new Producto("", "", "",);
     this.foto.nativeElement.value = "";
   }
 

@@ -15,6 +15,19 @@
   </p>
   <p>
     <mat-form-field>
+      <!-- <mat-label>Categoría</mat-label>
+      <mat-select [(ngModel)]="productoModel.categoria">
+        <mat-option *ngFor="let categoria of categorias" [value]="categoria.value" [(ngModel)]="productoModel.categoria">
+          {{categoria.viewValue}}
+        </mat-option>
+      </mat-select> -->
+      <input matInput [(ngModel)]="productoModel.categoria"
+             type="text"
+             placeholder="Categoría">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
       <input matInput [(ngModel)]="productoModel.precio"
              type="number"
              placeholder="Precio">

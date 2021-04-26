@@ -9,6 +9,10 @@
     <mat-header-cell *matHeaderCellDef>Descripción</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.descripcion}}</mat-cell>
   </ng-container>
+  <ng-container matColumnDef="categoria">
+    <mat-header-cell *matHeaderCellDef>Categoría</mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.categoria}}</mat-cell>
+  </ng-container>
   <ng-container matColumnDef="precio">
     <mat-header-cell *matHeaderCellDef>Precio</mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.precio | currency}}</mat-cell>

@@ -1,20 +1,3 @@
-/*
-
-    Programado por Luis Cabrera Benito
-  ____          _____               _ _           _
- |  _ \        |  __ \             (_) |         | |
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |
-        |___/                               |___/
-
-
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-*/
 // Cargar valores del entorno
 require("dotenv").config();
 const express = require("express"),
@@ -113,7 +96,7 @@ app.post("/compra", async (req, res) => {
 app.get("/carrito", (req, res) => {
   res.json(req.session.carrito || []);
 })
-// No está en un DELETE porque no permite datos en el body ._.
+// No está en un DELETE porque no permite datos en el body
 app.post("/carrito/eliminar", async (req, res) => {
   const idProducto = req.body.id;
   const indice = indiceDeProducto(req.session.carrito, idProducto);
@@ -177,7 +160,7 @@ app.post('/fotos_producto', (req, res) => {
 
 app.post('/producto', async (req, res) => {
   const producto = req.body;
-  const respuesta = await productoModel.insertar(producto.nombre, producto.descripcion, producto.precio);
+  const respuesta = await productoModel.insertar(producto.nombre, producto.descripcion, producto.categoria, producto.precio);
   res.json(respuesta);
 });
 
