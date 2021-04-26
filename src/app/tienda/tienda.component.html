@@ -1,4 +1,5 @@
 <div class="form-group">
     <input type="text" class="form-control" placeholder="Buscar por nombre" [(ngModel)]="searchTerm" style="width: 250px">
+    <input type="text" class="form-control" placeholder="Buscar por categoría" [(ngModel)]="searchTerm2" style="width: 250px">
 </div>
-<app-tarjeta-producto [producto]="producto" *ngFor="let producto of productos | productosFilter:searchTerm"></app-tarjeta-producto>
+<app-tarjeta-producto [producto]="producto" *ngFor="let producto of productos | productosFilter:searchTerm | categoriasFilter:searchTerm2"></app-tarjeta-producto>

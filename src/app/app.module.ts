@@ -35,6 +35,7 @@ import {MatStepperModule} from "@angular/material/stepper";
 import { DetalleDeVentaComponent } from './detalle-de-venta/detalle-de-venta.component';
 import { ProductosFilterPipe } from './productos/productos-filter.pipe';
 import {MatSelectModule} from '@angular/material/select';
+import { CategoriasFilterPipe } from './productos/categoria-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import {MatSelectModule} from '@angular/material/select';
     DetalleDeProductoComponent,
     TerminarCompraComponent,
     DetalleDeVentaComponent,
-    ProductosFilterPipe
+    ProductosFilterPipe,
+    CategoriasFilterPipe
   ],
   imports: [
     BrowserModule,
