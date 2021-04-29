@@ -1,16 +1,17 @@
-<div class="contenedor-padre container">
-  <mat-toolbar class="barra" color="warn">
+<div class="container">
+  <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <button (click)="cajon.toggle()" mat-icon-button>
+      <!-- <button (click)="cajon.toggle()" mat-icon-button>
         <mat-icon>menu</mat-icon>
-      </button>
+      </button> -->
       <span>
         Tienda
       </span>
       <span class="example-fill-remaining-space"></span>
       <button mat-raised-button [matMenuTriggerFor]="menu">
-        <span style="margin-right: 10px" [matBadge]="productos.length+''" matBadgeOverlap="false"
-              matBadgePosition="below after">Carrito de compras</span>
+        <mat-icon [matBadge]="productos.length+''" matBadgeColor="warn">shopping_cart</mat-icon>
+        <!-- <span [matBadge]="productos.length+''" matBadgeOverlap="false" color="warn"
+              matBadgePosition="below after">Carrito de compras</span> -->
       </button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item *ngFor="let p of productos;">{{p.nombre}}  {{p.precio | currency}}</button>
@@ -21,16 +22,41 @@
           <mat-icon>shopping_cart</mat-icon>
           Terminar compra</a>
       </mat-menu>
-      <a style="margin-left: 10px" mat-raised-button color="primary"
+      <!-- <button *ngIf="!admin" class="btn btn-primary" (click)="login()">Ingresar</button>
+      <button *ngIf="admin" class="btn btn-primary" (click)="logout()">Salir</button> -->
+      <!-- <a style="margin-left: 10px" mat-raised-button color="primary"
          href="" target="_blank">
         Ayuda y soporte
-      </a>
+      </a> -->
     </mat-toolbar-row>
   </mat-toolbar>
-  <mat-sidenav-container class="contenido">
-    <mat-sidenav style="min-width: 300px;" #cajon opened mode="side">
+  <div class="row">
+    <div class="col-12 my-4">
+      <p>Administrador</p>
+      <a mat-list-item routerLink="/productos">
+        <mat-icon class="mb-4" color="primary">list_alt</mat-icon>
+        Productos
+      </a>
+      <a mat-list-item routerLink="/ventas">
+        <mat-icon color="primary">local_shipping</mat-icon>
+        Ventas
+      </a>
+      <!-- <mat-divider class="pb-3"></mat-divider> -->
+      <p class="pb-3 pt-5">Cliente</p>
+      <a mat-list-item routerLink="/tienda">
+        <mat-icon color="primary">store</mat-icon>
+        Ver tienda
+      </a>
+    </div>
+    <div class="col-12">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <!-- <mat-sidenav-container class="row">
+    <mat-sidenav class="col-3"  #cajon opened mode="side">
       <mat-nav-list>
-        <p style="margin-left: 4px;">Administrador</p>
+        <div>
+          <p style="margin-left: 4px;">Administrador</p>
         <a mat-list-item routerLink="/productos">
           <mat-icon color="primary">list_alt</mat-icon>
           Productos
@@ -40,6 +66,7 @@
           Ventas
         </a>
         <mat-divider></mat-divider>
+        </div>
         <p style="margin-left: 4px;">Cliente</p>
         <a mat-list-item routerLink="/tienda">
           <mat-icon color="primary">store</mat-icon>
@@ -47,8 +74,8 @@
         </a>
       </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content class="padding-10">
+    <mat-sidenav-content class="col-9">
       <router-outlet></router-outlet>
     </mat-sidenav-content>
-  </mat-sidenav-container>
+  </mat-sidenav-container> -->
 </div>

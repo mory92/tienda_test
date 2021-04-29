@@ -76,12 +76,12 @@ app.get("/ventas", async (req, res) => {
   res.json(ventas);
 });
 app.post("/compra", async (req, res) => {
-  const {nombre, direccion} = req.body;
+  const {nombre, direccion, contacto} = req.body;
   let total = 0;
 
   const carrito = req.session.carrito || [];
   carrito.forEach(p => total += p.precio);
-  const idCliente = await clienteModel.insertar(nombre, direccion);
+  const idCliente = await clienteModel.insertar(nombre, direccion, contacto);
   const idVenta = await ventaModel.insertar(idCliente, total);
   // usamos for en lugar de foreach por el await
   for (let m = 0; m < carrito.length; m++) {

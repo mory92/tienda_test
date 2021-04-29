@@ -13,7 +13,7 @@ export class VentasComponent implements OnInit {
   }
 
   public ventas = [];
-  public columnas = ['cliente', 'direccion', 'total', 'detalles'];
+  public columnas = ['cliente', 'direccion', 'contacto', 'total', 'detalles'];
 
   async ngOnInit() {
     this.ventas = await this.ventasService.obtenerVentas();

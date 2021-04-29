@@ -10,6 +10,7 @@ import {DataSharingService} from "./data-sharing.service";
 export class AppComponent implements OnInit {
   title = 'e-commerce-angular-node';
   public productos = [];
+  admin: boolean = false;
 
   constructor(private carritoService: CarritoService, private dataSharingService: DataSharingService) {
     // Comunicación entre componentes
@@ -28,6 +29,14 @@ export class AppComponent implements OnInit {
     let total = 0;
     this.productos.forEach(p => total += p.precio);
     return total;
+  }
+
+  public login(){
+    this.admin = true;
+  }
+
+  public logout(){
+    this.admin = false;
   }
 
   ngOnInit(): void {

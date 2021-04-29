@@ -1,6 +1,16 @@
 table {
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+mat-cell, mat-header-cell, mat-footer-cell{
+  width: 130px;
+  display: flex;
+  align-items: center;
+}
+.table-container{
+  overflow-x: scroll;
 }
 img{
-  max-width: 500px;
+  max-width: 100%;
 }

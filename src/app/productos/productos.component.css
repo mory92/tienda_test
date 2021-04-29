@@ -1,4 +1,11 @@
 table {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
 }
+mat-cell, mat-header-cell, mat-footer-cell{
+  width: 170px;
+}
+.table-container{
+  overflow-x: scroll;
+}
+

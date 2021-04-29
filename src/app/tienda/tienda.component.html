@@ -1,5 +1,10 @@
-<div class="form-group">
-    <input type="text" class="form-control" placeholder="Buscar por nombre" [(ngModel)]="searchTerm" style="width: 250px">
-    <input type="text" class="form-control" placeholder="Buscar por categoría" [(ngModel)]="searchTerm2" style="width: 250px">
+<label for="">Buscar por</label>
+<div class="form-row mb-3">
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Nombre" [(ngModel)]="searchTerm">
+    </div>
+    <div class="col">
+        <input type="text" class="form-control" placeholder="Categoría" [(ngModel)]="searchTerm2">
+    </div>
 </div>
 <app-tarjeta-producto [producto]="producto" *ngFor="let producto of productos | productosFilter:searchTerm | categoriasFilter:searchTerm2"></app-tarjeta-producto>

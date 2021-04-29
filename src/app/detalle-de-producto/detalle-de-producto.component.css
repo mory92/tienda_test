@@ -19,31 +19,31 @@ img.imagen-izquierda.seleccionada{
 .izquierda {
   margin-right: 15px;
 }
-
+/* 
 mat-grid-tile.detalles ::ng-deep figure {
   align-items: start !important;
   justify-content: start !important;
   display: block;
   padding: 5px;
-}
+} */
 
-button.carrito {
+/* button.carrito {
   position: absolute;
   left: 0;
   bottom: 0;
   margin: 0 0 15px 5px;
-}
-a.comprar {
+} */
+/* a.comprar {
   position: absolute;
   left: 180px;
   bottom: 0;
   margin: 0 0 15px 5px;
-}
+} */
 
-.mat-display-2 {
+/* .mat-display-2 {
   margin: 0;
+} */
 
-}
 p{
   font-size: 1.3rem !important;
 }

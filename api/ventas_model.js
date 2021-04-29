@@ -1,20 +1,3 @@
-/*
-
-    Programado por Luis Cabrera Benito 
-  ____          _____               _ _           _       
- |  _ \        |  __ \             (_) |         | |      
- | |_) |_   _  | |__) |_ _ _ __ _____| |__  _   _| |_ ___ 
- |  _ <| | | | |  ___/ _` | '__|_  / | '_ \| | | | __/ _ \
- | |_) | |_| | | |  | (_| | |   / /| | |_) | |_| | ||  __/
- |____/ \__, | |_|   \__,_|_|  /___|_|_.__/ \__, |\__\___|
-         __/ |                               __/ |        
-        |___/                               |___/         
-    
-    
-    Blog:       https://parzibyte.me/blog
-    Ayuda:      https://parzibyte.me/blog/contrataciones-ayuda/
-    Contacto:   https://parzibyte.me/blog/contacto/
-*/
 const conexion = require("./conexion")
 module.exports = {
   obtenerProductosVendidos(idVenta) {
@@ -29,7 +12,7 @@ module.exports = {
   },
   obtenerPorId(id) {
     return new Promise((resolve, reject) => {
-      conexion.query(`select ventas.total, clientes.nombre, clientes.direccion FROM ventas inner join clientes on ventas.id_cliente = clientes.id WHERE ventas.id = ?`,
+      conexion.query(`select ventas.total, clientes.nombre, clientes.direccion, clientes.contacto FROM ventas inner join clientes on ventas.id_cliente = clientes.id WHERE ventas.id = ?`,
         [id],
         (err, resultados) => {
           if (err) reject(err);
@@ -39,7 +22,7 @@ module.exports = {
   },
   obtener() {
     return new Promise((resolve, reject) => {
-      conexion.query(`select ventas.id, ventas.total, clientes.nombre, clientes.direccion FROM ventas inner join clientes on ventas.id_cliente = clientes.id;`,
+      conexion.query(`select ventas.id, ventas.total, clientes.nombre, clientes.direccion, clientes.contacto FROM ventas inner join clientes on ventas.id_cliente = clientes.id;`,
         (err, resultados) => {
           if (err) reject(err);
           else resolve(resultados);

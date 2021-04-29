@@ -1,12 +1,12 @@
 const conexion = require("./conexion")
 module.exports = {
-  insertar(nombre, direccion) {
+  insertar(nombre, direccion, contacto) {
     return new Promise((resolve, reject) => {
       conexion.query(`insert into clientes
-            (nombre,direccion)
+            (nombre, direccion, contacto)
             values
-            (?, ?)`,
-        [nombre, direccion], (err, resultados) => {
+            (?, ?, ?)`,
+        [nombre, direccion, contacto], (err, resultados) => {
           if (err) reject(err);
           else resolve(resultados.insertId);
         });
