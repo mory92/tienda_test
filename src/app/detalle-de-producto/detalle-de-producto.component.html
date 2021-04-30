@@ -51,12 +51,11 @@
         </mat-chip>
       </mat-chip-list>
       <div class="d-flex">
-        <button *ngIf="!yaExiste" (click)="agregarAlCarrito()" class="carrito mr-2" mat-raised-button color="accent">
-
-          <mat-icon>add</mat-icon>
+        <button *ngIf="!yaExiste" (click)="agregarAlCarrito()" class="carrito mr-2 add-btn" mat-raised-button>
+          <mat-icon style="margin-left: -5px;">add</mat-icon>
           Agregar al carrito
         </button>
-        <button *ngIf="yaExiste" (click)="quitarDelCarrito()" class="carrito mr-2" mat-raised-button color="accent">
+        <button *ngIf="yaExiste" (click)="quitarDelCarrito()" class="carrito mr-2 add-btn" mat-raised-button>
           <mat-icon>delete</mat-icon>
           Quitar del carrito
         </button>

@@ -1,3 +1,13 @@
 input[type="file"] {
   margin: 10px 0;
 }
+::ng-deep mat-form-field{
+  width: 100%;
+}
+::ng-deep mat-card{
+  margin-bottom: 30px;
+}
+::ng-deep .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent{
+  background-color: #317b31!important;
+  color: white;
+}

@@ -10,7 +10,7 @@ import {ProductosService} from "../productos.service";
 export class ProductosComponent implements OnInit {
 
   public productos = [];
-  public columnas = ['nombre', 'categoria', 'precio', 'eliminar'];
+  // public columnas = ['nombre', 'categoria', 'precio', 'eliminar'];
 
   constructor(private router: Router, private productosService: ProductosService) {
   }

@@ -11,3 +11,6 @@ mat-cell, mat-header-cell, mat-footer-cell{
 .table-container{
   overflow-x: scroll;
 }
+.details mat-icon{
+  color: #317b31;
+}

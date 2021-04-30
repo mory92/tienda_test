@@ -47,3 +47,16 @@ mat-grid-tile.detalles ::ng-deep figure {
 p{
   font-size: 1.3rem !important;
 }
+
+::ng-deep mat-card{
+  margin-bottom: 30px;
+}
+
+.add-btn{
+  background-color: #317b31;
+  color: white;
+}
+
+::ng-deep .mat-chip-list-wrapper{
+  margin-bottom: 20px!important;
+}

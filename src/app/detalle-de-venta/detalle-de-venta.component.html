@@ -1,15 +1,15 @@
 <mat-card>
   <h2>
-    <mat-icon>person</mat-icon>
+    <mat-icon color="primary">person</mat-icon>
     {{venta.nombre}}</h2>
   <h2>
-    <mat-icon>local_shipping</mat-icon>
+    <mat-icon color="primary">local_shipping</mat-icon>
     {{venta.direccion}}</h2>
   <h2>
-    <mat-icon>phone</mat-icon>
+    <mat-icon color="primary">phone</mat-icon>
     {{venta.contacto}}</h2>
   <h2>
-    <mat-icon>monetization_on</mat-icon>
+    <mat-icon color="primary">monetization_on</mat-icon>
     {{venta.total | currency}}</h2>
   <table *ngIf="venta.productos.length>0" mat-table [dataSource]="venta.productos">
     <ng-container matColumnDef="nombre">
@@ -24,5 +24,5 @@
     <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
   </table>
   <br>
-  <a routerLink="/ventas" mat-raised-button color="accent">Volver</a>
+  <a routerLink="/ventas" mat-raised-button color="primary">Volver</a>
 </mat-card>

@@ -1,5 +1,5 @@
 <h1>Ventas</h1>
-<div class="table-container">
+<!-- <div class="table-container">
   <table class="mat-elevation-z13" *ngIf="ventas.length>0" mat-table [dataSource]="ventas">
     <ng-container matColumnDef="cliente">
       <mat-header-cell *matHeaderCellDef>Cliente</mat-header-cell>
@@ -28,4 +28,22 @@
     <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
   </table>
+</div> -->
+<div class="row">
+  <div class="col-6" [ventas]="venta" *ngFor="let venta of ventas">
+    <mat-card class="my-3">
+    <div>
+      <div>
+        <h2>{{venta.nombre}}</h2>
+        <h2>{{venta.direccion}}</h2>
+        <h1>{{venta.contacto}}</h1>
+        <h1>{{venta.total | currency}}</h1>
+        <button class="details" mat-icon-button (click)="verDetalle(venta.id)">
+          Ver detalles
+          <mat-icon>pageview</mat-icon>
+        </button>
+      </div>
+    </div>
+    </mat-card>
+  </div>
 </div>

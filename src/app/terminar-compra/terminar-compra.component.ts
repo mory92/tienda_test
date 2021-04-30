@@ -15,7 +15,7 @@ export class TerminarCompraComponent implements OnInit {
 
   public compraTerminada = false;
   public productos = [];
-  public columnas = ['nombre', 'categoria', 'precio', 'quitar'];
+  // public columnas = ['nombre', 'categoria', 'precio', 'quitar'];
   public clienteModel = new Cliente("", "", "",);
 
   public async revisarYTerminar(stepper) {

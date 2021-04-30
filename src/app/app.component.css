@@ -21,7 +21,15 @@
   flex: 1 1 auto;
 }
 
-body{
-  overflow: hidden;
+::ng-deep body{
   overflow-x: hidden;
+  background-color: #dadada!important;
+}
+::ng-deep .opciones .mat-list-item-content{
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+::ng-deep .opciones .mat-list-item-content mat-icon{
+  padding-right: 30px;
 }

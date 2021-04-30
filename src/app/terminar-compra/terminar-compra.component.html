@@ -1,15 +1,11 @@
-<mat-horizontal-stepper #stepper linear>
+<mat-horizontal-stepper class="mb-3" #stepper linear>
   <mat-step label="Revisar total">
-    <div class="table-container">
+    <!-- <div class="table-container">
       <table *ngIf="productos.length>0" mat-table [dataSource]="productos">
         <ng-container matColumnDef="nombre">
           <mat-header-cell *matHeaderCellDef>Producto</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nombre}}</mat-cell>
         </ng-container>
-        <!-- <ng-container matColumnDef="descripcion">
-          <mat-header-cell *matHeaderCellDef>Descripción</mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.descripcion}}</mat-cell>
-        </ng-container> -->
         <ng-container matColumnDef="categoria">
           <mat-header-cell *matHeaderCellDef>Categoría</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.categoria}}</mat-cell>
@@ -31,6 +27,22 @@
         <mat-header-row *matHeaderRowDef="columnas"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnas;"></mat-row>
       </table>
+    </div> -->
+    <div class="row">
+      <div class="col-12" [producto]="producto" *ngFor="let producto of productos">
+        <mat-card class="my-3">
+        <div>
+          <div>
+            <h2>{{producto.nombre}}</h2>
+            <h2>{{producto.categoria}}</h2>
+            <h1>{{producto.precio | currency}}</h1>
+            <button (click)="quitar(producto)" mat-icon-button color="warn">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+        </mat-card>
+      </div>
     </div>
     <h2>Total: {{total() | currency}}</h2>
     <button matStepperNext mat-raised-button color="primary">Continuar
