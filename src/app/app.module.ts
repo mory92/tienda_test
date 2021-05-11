@@ -36,6 +36,7 @@ import { DetalleDeVentaComponent } from './detalle-de-venta/detalle-de-venta.com
 import { ProductosFilterPipe } from './productos/productos-filter.pipe';
 import {MatSelectModule} from '@angular/material/select';
 import { CategoriasFilterPipe } from './productos/categoria-filter.pipe';
+import { SplashComponent } from './splash/splash.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { CategoriasFilterPipe } from './productos/categoria-filter.pipe';
     TerminarCompraComponent,
     DetalleDeVentaComponent,
     ProductosFilterPipe,
-    CategoriasFilterPipe
+    CategoriasFilterPipe,
+    SplashComponent
   ],
   imports: [
     BrowserModule,
@@ -79,7 +81,7 @@ import { CategoriasFilterPipe } from './productos/categoria-filter.pipe';
     MatStepperModule,
     MatSelectModule
   ],
-  providers: [],
+  providers: [ProductosFilterPipe, CategoriasFilterPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,11 +1,12 @@
 <div class="container px-0">
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <!-- <button (click)="cajon.toggle()" mat-icon-button>
+      <button (click)="openNav()" mat-icon-button>
         <mat-icon>menu</mat-icon>
-      </button> -->
-      <span>
-        Tienda
+      </button>
+      <span routerLink="/tienda">
+        <img routerLink="/tienda" src="../assets/img/logo3.png" width="40" height="40" alt="" srcset="">
+        Animal Crew
       </span>
       <span class="example-fill-remaining-space"></span>
       <button mat-raised-button [matMenuTriggerFor]="menu">
@@ -46,33 +47,19 @@
       </a>
     </div>
     <div class="col-12">
-      <router-outlet></router-outlet>
+      <splash [animationType]="'slide-left'" [duration]="1.5"></splash>
+      <router-outlet [busqueda]="busqueda"></router-outlet>
     </div>
   </div>
-  <!-- <mat-sidenav-container class="row">
-    <mat-sidenav class="col-3"  #cajon opened mode="side">
-      <mat-nav-list>
-        <div>
-          <p style="margin-left: 4px;">Administrador</p>
-        <a mat-list-item routerLink="/productos">
-          <mat-icon color="primary">list_alt</mat-icon>
-          Productos
-        </a>
-        <a mat-list-item routerLink="/ventas">
-          <mat-icon color="primary">local_shipping</mat-icon>
-          Ventas
-        </a>
-        <mat-divider></mat-divider>
-        </div>
-        <p style="margin-left: 4px;">Cliente</p>
-        <a mat-list-item routerLink="/tienda">
-          <mat-icon color="primary">store</mat-icon>
-          Ver tienda
-        </a>
-      </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content class="col-9">
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container> -->
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+  <div class="contenedor-logo">
+    <span routerLink="/tienda">
+      <img routerLink="/tienda" src="../assets/img/logo3.png" width="40" height="40" alt="" srcset="">
+      Animal Crew
+    </span>
+  </div>
+  <h3 *ngFor="let p of productos2;" (click)="ordenar()">{{p.categoria}}</h3>
 </div>

@@ -1,16 +1,9 @@
-table {
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-mat-cell, mat-header-cell, mat-footer-cell{
-  width: 170px;
-}
-.table-container{
-  overflow-x: scroll;
-}
 .add-btn{
   background-color: #317b31;
   color: white;
+}
+::ng-deep mat-card{
+  height: auto;
+  border: solid 1px #3f51b5;
 }
 

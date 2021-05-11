@@ -6,8 +6,13 @@ input[type="file"] {
 }
 ::ng-deep mat-card{
   margin-bottom: 30px;
+  height: auto;
+  border: solid 1px #3f51b5;
 }
 ::ng-deep .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent{
   background-color: #317b31!important;
   color: white;
+}
+textarea{
+  line-height: 1.5;
 }

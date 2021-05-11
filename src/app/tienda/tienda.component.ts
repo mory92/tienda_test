@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ProductosService} from "../productos.service";
+import {ProductosFilterPipe} from "../productos/productos-filter.pipe";
+import {CategoriasFilterPipe} from "../productos/categoria-filter.pipe";
 
 @Component({
   selector: 'app-tienda',

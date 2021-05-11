@@ -1,16 +1,7 @@
-table {
-  width: 100%;
-  margin-top: 20px;
-  margin-bottom: 40px;
-}
-mat-cell, mat-header-cell, mat-footer-cell{
-  width: 130px;
-  display: flex;
-  align-items: center;
-}
-.table-container{
-  overflow-x: scroll;
-}
 .details mat-icon{
   color: #317b31;
+}
+::ng-deep mat-card{
+  height: auto;
+  border: solid 1px #3f51b5;
 }

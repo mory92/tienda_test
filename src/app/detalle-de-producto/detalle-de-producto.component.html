@@ -12,34 +12,9 @@
         <img *ngIf="fotoSeleccionada" [src]="resolverFoto(fotoSeleccionada)" alt="">
       </div>
     </mat-grid-tile>
-    <!-- <mat-grid-tile class="detalles">
-      <h1 class="py-3">{{producto.nombre}}</h1>
-      <p class="py-3">{{producto.descripcion}}</p>
-      <p class="py-3">{{producto.categoria}}</p>
-      <strong class="py-3">Precio</strong>
-      <h1 class="py-3">{{producto.precio | currency}}</h1>
-      <mat-chip-list *ngIf="yaExiste">
-        <mat-chip color="warn" selected>
-          <mat-icon>check</mat-icon>
-          En el carrito de compras
-        </mat-chip>
-      </mat-chip-list>
-      <button *ngIf="!yaExiste" (click)="agregarAlCarrito()" class="carrito" mat-raised-button color="accent">
-
-        <mat-icon>add</mat-icon>
-        Agregar al carrito
-      </button>
-      <button *ngIf="yaExiste" (click)="quitarDelCarrito()" class="carrito" mat-raised-button color="accent">
-        <mat-icon>delete</mat-icon>
-        Quitar del carrito
-      </button>
-      <a routerLink="/tienda" class="comprar" mat-raised-button color="primary">
-        Seguir comprando
-      </a>
-    </mat-grid-tile> -->
   </mat-grid-list>
     <div class="detalles">
-      <h1 class="py-3">{{producto.nombre}}</h1>
+      <h1 class="pt-3">{{producto.nombre}}</h1>
       <p class="py-3">{{producto.descripcion}}</p>
       <p class="py-3">{{producto.categoria}}</p>
       <strong class="py-3">Precio</strong>

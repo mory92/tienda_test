@@ -46,6 +46,7 @@ mat-grid-tile.detalles ::ng-deep figure {
 
 p{
   font-size: 1.3rem !important;
+  line-height: 1.5;
 }
 
 ::ng-deep mat-card{
@@ -59,4 +60,8 @@ p{
 
 ::ng-deep .mat-chip-list-wrapper{
   margin-bottom: 20px!important;
+}
+::ng-deep mat-card{
+  height: auto;
+  border: solid 1px #3f51b5;
 }
